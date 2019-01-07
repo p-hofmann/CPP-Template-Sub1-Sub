@@ -9,7 +9,7 @@ TODO: Continuous integration
 
 ├── CMakeLists.txt  
 ├── include  
-│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── project.h  
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── project.h  
 ├── src  
 │&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── project_LINUX.cpp  
 │&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── project_DARWIN.cpp  
