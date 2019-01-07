@@ -33,3 +33,7 @@
 
 # CLion project files
 .idea/
+cmake-build-debug/
+
+# External projects, ideally not included
+external
