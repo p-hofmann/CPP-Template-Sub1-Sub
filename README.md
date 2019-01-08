@@ -1,5 +1,6 @@
 # CPP-Template-Sub1-Sub
-![TraviCI](https://api.travis-ci.com/p-hofmann/CPP-Template-Sub1-Sub.svg?branch=master)  
+![TraviCI](https://api.travis-ci.com/p-hofmann/CPP-Template-Sub1-Sub.svg?branch=master)
+[![CircleCI](https://circleci.com/gh/p-hofmann/CPP-Template-Sub1-Sub/tree/master.svg?style=svg)](https://circleci.com/gh/p-hofmann/CPP-Template-Sub1-Sub/tree/master)  
 A C++ Submodule of 'CPP-Template-Sub1'.
 This is part of the [C++ template](https://github.com/p-hofmann/CPP-Template) that deals with the issue of organizing a big project.
 In addition to that it also includes ways to deal with different operation systems or even architecture.  
