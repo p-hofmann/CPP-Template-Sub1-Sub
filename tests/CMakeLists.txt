@@ -75,7 +75,7 @@ target_include_directories(${TEST_PROJECT_NAME}
 # Make sure that Catch2 exists
 add_dependencies(${TEST_PROJECT_NAME} catch2_project)
 
-# Adding test for 'cmake' FIXME:(not yet working)
+# Adding test for 'ctest'
 add_test(
     NAME ${TEST_PROJECT_NAME}
     COMMAND ${TEST_PROJECT_NAME})
