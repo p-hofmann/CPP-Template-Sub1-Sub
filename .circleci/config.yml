@@ -38,4 +38,4 @@ jobs:
           command: 'for file in ./bin/*; do "$file"; done'
       - run:
           name: CTest
-          command: 'CTEST_OUTPUT_ON_FAILURE=1; ctest Build-Debug'
+          command: 'cd Build-Debug; CTEST_OUTPUT_ON_FAILURE=1; ctest .'
