@@ -288,9 +288,9 @@ script:
 #      make lcov
 #      bash <(curl -s https://codecov.io/bash) -X gcov || echo "Codecov did not collect coverage reports"
 #    fi
-  - popd
-  - # Go to release build
-  - pushd Build-Release
-  - cmake --build .
-  - CTEST_OUTPUT_ON_FAILURE=1; ctest
-  - popd
+#  - popd
+#  - # Go to release build
+#  - pushd Build-Release
+#  - cmake --build .
+#  - CTEST_OUTPUT_ON_FAILURE=1; ctest
+#  - popd
