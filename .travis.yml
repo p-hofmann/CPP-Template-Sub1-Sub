@@ -196,6 +196,9 @@ matrix:
 #      env: COMPILER='clang++-3.8' EXAMPLES=1 COVERAGE=1 EXTRAS=1
 #
     - os: windows
+      addons:
+        apt:
+          packages: ['make', 'cmake']
 
     - os: linux
       compiler: gcc
