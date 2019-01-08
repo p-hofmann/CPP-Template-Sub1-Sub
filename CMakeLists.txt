@@ -14,6 +14,7 @@ if( CMAKE_SIZEOF_VOID_P EQUAL 8 )
 endif ()
 
 # Gather src files that depending on a specific OS
+message(STATUS "U${UNIX} A${APPLE} W${WIN32} D${CMAKE_SYSTEM_NAME}")
 if (UNIX)
     set(PLATFORM_DEPENEND src/cpptemplatesub1sub_LINUX.cpp)
 elseif (APPLE AND ${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
