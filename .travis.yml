@@ -279,7 +279,7 @@ before_script:
 script:
   - pushd Build-Debug
   - cmake --build .
-  - CTEST_OUTPUT_ON_FAILURE=1 ctest
+  - CTEST_OUTPUT_ON_FAILURE=1; ctest
     # Coverage collection does not work for OS X atm
   - |
     if [[ "${TRAVIS_OS_NAME}" == "linux" ]] && [[ "${COVERAGE}" == "1" ]]; then
@@ -291,5 +291,5 @@ script:
   - # Go to release build
   - pushd Build-Release
   - cmake --build .
-  - CTEST_OUTPUT_ON_FAILURE=1 ctest
+  - CTEST_OUTPUT_ON_FAILURE=1; ctest
   - popd
