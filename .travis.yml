@@ -1,3 +1,7 @@
+#####
+# Based on: https://github.com/catchorg/Catch2/blob/master/.travis.yml
+#####
+
 language: cpp
 
 branches:
