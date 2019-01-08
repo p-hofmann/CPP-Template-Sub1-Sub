@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-set(CMAKE_CXX_STANDARD 11)
+#set(CMAKE_CXX_STANDARD 11)
 
 # Have all executables in the bin folder, so continuous integratian can easily call them
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/bin)
@@ -41,4 +41,5 @@ target_include_directories(CPlusPlus_Template_Submodule1_Submodule
 )
 
 # Add Unittest
+enable_testing()
 add_subdirectory(tests)
