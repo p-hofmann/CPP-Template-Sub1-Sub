@@ -25,8 +25,8 @@ jobs:
           name: Creating Binary Files
           command: 'cmake --build build'
       - run:
-          name: Test Unit Testing
-          command: './bin/UnitTestCPPTemplateSub1Sub'
+          name: Unit Testing
+          command: 'for file in ./bin/*; do "$file"; done'
       - run:
           name: CTest
           command: 'CTEST_OUTPUT_ON_FAILURE=1; ctest build'
