@@ -267,7 +267,7 @@ install:
 
 before_script:
   - export CXX=${COMPILER}
-  - if [[ "${TRAVIS_OS_NAME}" == "windows" ]]; then export PATH="$PATH:/c/Program Files (x86)/Microsoft Visual Studio/2017/BuildTools/MSBuild/15.0/Bin"; fi
+#  - if [[ "${TRAVIS_OS_NAME}" == "windows" ]]; then export PATH="$PATH:/c/Program Files (x86)/Microsoft Visual Studio/2017/BuildTools/MSBuild/15.0/Bin"; fi
   - cd ${TRAVIS_BUILD_DIR}
 
     # Use Debug builds for running Valgrind and building examples
@@ -279,14 +279,15 @@ before_script:
 script:
   - pushd Build-Debug
   - cmake --build .
-  - CTEST_OUTPUT_ON_FAILURE=1; ctest
-    # Coverage collection does not work for OS X atm
-  - |
-    if [[ "${TRAVIS_OS_NAME}" == "linux" ]] && [[ "${COVERAGE}" == "1" ]]; then
-      make gcov
-      make lcov
-      bash <(curl -s https://codecov.io/bash) -X gcov || echo "Codecov did not collect coverage reports"
-    fi
+  - if [[ "${TRAVIS_OS_NAME}" != "windows" ]]; then CTEST_OUTPUT_ON_FAILURE=1 ctest; fi
+  - if [[ "${TRAVIS_OS_NAME}" == "windows" ]]; then for file in ./bin/*; do "$file"; done fi
+#    # Coverage collection does not work for OS X atm
+#  - |
+#    if [[ "${TRAVIS_OS_NAME}" == "linux" ]] && [[ "${COVERAGE}" == "1" ]]; then
+#      make gcov
+#      make lcov
+#      bash <(curl -s https://codecov.io/bash) -X gcov || echo "Codecov did not collect coverage reports"
+#    fi
   - popd
   - # Go to release build
   - pushd Build-Release
