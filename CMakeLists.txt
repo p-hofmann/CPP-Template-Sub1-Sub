@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.5)
 set(CMAKE_CXX_STANDARD 11)
 
+# Have all executables in the bin folder, so continuous integratian can easily call them
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/bin)
+
 # Name the project and add a version number
 project(CPlusPlus_Template_Submodule1_Submodule VERSION 0.0.1 LANGUAGES CXX)
 
