@@ -12,9 +12,13 @@ ExternalProject_Add(
     catch2_project
     PREFIX ${CMAKE_BINARY_DIR}/catch2
     SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../external/Catch2
-    GIT_REPOSITORY git@github.com:catchorg/Catch2.git
+    GIT_REPOSITORY https://github.com/catchorg/Catch2.git
     GIT_TAG origin/master
+    CONFIGURE_COMMAND ""
+    BUILD_COMMAND ""
+    INSTALL_COMMAND ""
 )
+# CONFIGURE BUILD and INSTALL are passed an empty string to prevent those unrequired steps.
 
 # save location git repository in SOURCE_DIR
 ExternalProject_Get_Property(catch2_project SOURCE_DIR)
@@ -67,6 +71,9 @@ target_include_directories(${TEST_PROJECT_NAME}
         ${CATCH2_INCLUDE_DIR}
     )
 # Note, that the catch2 library lcation was added
+
+# Make sure that Catch2 exists
+add_dependencies(${TEST_PROJECT_NAME} catch2_project)
 
 # Adding test for 'cmake' FIXME:(not yet working)
 add_test(
