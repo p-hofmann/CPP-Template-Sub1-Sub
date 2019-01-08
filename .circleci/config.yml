@@ -25,11 +25,11 @@ jobs:
           name: Creating Build Files
           command: 'cmake -H. -BBuild-Debug  -DCMAKE_BUILD_TYPE=Debug -Wdev -DUSE_CPP14=${CPP14} -DUSE_CPP17=${CPP17} -DCATCH_USE_VALGRIND=${VALGRIND} -DCATCH_BUILD_EXAMPLES=${EXAMPLES} -DCATCH_ENABLE_COVERAGE=${COVERAGE} -DCATCH_BUILD_EXTRA_TESTS=${EXTRAS}'
           environment:
-            CPP14=1
-            VALGRIND=1
-            EXAMPLES=1
-            COVERAGE=1
-            EXTRAS=1
+            CPP14: 1
+            VALGRIND: 1
+            EXAMPLES: 1
+            COVERAGE: 1
+            EXTRAS: 1
       - run:
           name: Creating Binary Files
           command: 'cmake --build Build-Debug'
