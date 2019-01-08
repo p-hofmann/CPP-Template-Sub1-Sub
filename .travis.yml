@@ -7,10 +7,10 @@ branches:
 common_sources: &all_sources
   - ubuntu-toolchain-r-test
   - llvm-toolchain-trusty
-  - llvm-toolchain-trusty-3.9
-  - llvm-toolchain-trusty-4.0
-  - llvm-toolchain-trusty-5.0
   - llvm-toolchain-trusty-6.0
+#  - llvm-toolchain-trusty-3.9
+#  - llvm-toolchain-trusty-4.0
+#  - llvm-toolchain-trusty-5.0
 
 matrix:
   include:
@@ -195,6 +195,8 @@ matrix:
 #            - llvm-toolchain-trusty
 #      env: COMPILER='clang++-3.8' EXAMPLES=1 COVERAGE=1 EXTRAS=1
 #
+    - os: windows
+
     - os: linux
       compiler: gcc
       addons:
