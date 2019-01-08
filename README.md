@@ -2,11 +2,10 @@
 ![TraviCI](https://api.travis-ci.com/p-hofmann/CPP-Template-Sub1-Sub.svg?branch=master)  
 A C++ Submodule of 'CPP-Template-Sub1'.
 This is part of the [C++ template](https://github.com/p-hofmann/CPP-Template) that deals with the issue of organizing a big project.
-In addition to that it also includes ways to deal with different operation systems or even architecture.
-And lastly it includes unittests using [Catch2](https://github.com/catchorg/Catch2).
-The [Catch2](https://github.com/catchorg/Catch2) source is not in the 'external' folder as expected, but is cloned from the repository by cmake.
-  
-TODO: Continuous integration
+In addition to that it also includes ways to deal with different operation systems or even architecture.  
+It includes unittests using [Catch2](https://github.com/catchorg/Catch2).
+The [Catch2](https://github.com/catchorg/Catch2) source is not included in this repository as expected, but is cloned from the remote repository when the project is build.  
+Continuous integration using [Travis CI](https://travis-ci.com/) is supported. The Code is tested on Linux, Darwin and Windows OS.
 
 ├── CMakeLists.txt  
 ├── include  
@@ -23,3 +22,9 @@ TODO: Continuous integration
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── main.cpp  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── string_utils.test.cpp  
 
+* include - Header of current module
+* src - Source files of current module
+* external - External projects that are not developed as part of this project.
+* tests - Unittest files of current module
+
+The 'include' folder does not contain sub-folders, as this repository represents a mini module.
