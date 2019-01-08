@@ -78,4 +78,4 @@ add_dependencies(${TEST_PROJECT_NAME} catch2_project)
 # Adding test for 'cmake' FIXME:(not yet working)
 add_test(
     NAME ${TEST_PROJECT_NAME}
-    COMMAND ${TEST_PROJECT_NAME} -o ${CMAKE_CURRENT_SOURCE_DIR}/report.xml -r junit)
+    COMMAND ${TEST_PROJECT_NAME})
