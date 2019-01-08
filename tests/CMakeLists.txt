@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-#set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 11)
 
 ###############
 # Prepare Unittest library CATCH
@@ -27,7 +27,7 @@ set(CATCH2_INCLUDE_DIR ${SOURCE_DIR}/single_include/catch2)
 ###############
 
 # Name the test project
-set(TEST_PROJECT_NAME UnitTest_CPlusPlus_Template_Submodule1_Submodule)
+set(TEST_PROJECT_NAME UnitTestCPPTemplateSub1Sub)
 project(${TEST_PROJECT_NAME} VERSION 0.0.1 LANGUAGES CXX)
 
 # Find out if the current architecture is 32 or 64 bit and
@@ -39,11 +39,11 @@ endif ()
 # Gather src files that depending on a specific OS
 set(SRC_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/../src)
 if (UNIX)
-    set(PLATFORM_DEPENENT_FILES ${SRC_LOCATION}/cpptemplatesubmodule1submodule_LINUX.cpp)
+    set(PLATFORM_DEPENENT_FILES ${SRC_LOCATION}/cpptemplatesub1sub_LINUX.cpp)
 elseif (APPLE AND ${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-    set(PLATFORM_DEPENENT_FILES ${SRC_LOCATION}cpptemplatesubmodule1submodule_DARWIN.cpp)
+    set(PLATFORM_DEPENENT_FILES ${SRC_LOCATION}cpptemplatesub1sub_DARWIN.cpp)
 elseif (WIN32)
-    set(PLATFORM_DEPENENT_FILES ${SRC_LOCATION}cpptemplatesubmodule1submodule_WIN32.cpp)
+    set(PLATFORM_DEPENENT_FILES ${SRC_LOCATION}cpptemplatesub1sub_WIN32.cpp)
 else ()
     message(SEND_ERROR "Unknown OS")
 endif ()
@@ -51,9 +51,9 @@ endif ()
 # Project will be made into an executable
 set(INCLUDE_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/../include)
 add_executable(${TEST_PROJECT_NAME}
-    test_cpptemplatesubmodule1submodule.cpp
+    test_cpptemplatesub1sub.cpp
     ${PLATFORM_DEPENENT_FILES}
-    ${INCLUDE_LOCATION}/cpptemplatesubmodule1submodule.h
+    ${INCLUDE_LOCATION}/cpptemplatesub1sub.h
     )
 
 # This will specify for this project only, /src and /include as the folders to look into for files

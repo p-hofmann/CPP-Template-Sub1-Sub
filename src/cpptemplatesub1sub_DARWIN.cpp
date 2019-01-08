@@ -3,7 +3,7 @@
 //
 
 #include <iostream>
-#include "cpptemplatesubmodule1submodule.h"
+#include "cpptemplatesub1sub.h"
 
 using namespace SubModule1;
 
@@ -12,8 +12,8 @@ using namespace SubModule1;
  * The OS specificity here is silly, but imagine instead a method like getCWD()
  * @return - String representing the class
  */
-std::string CPPTemplateSubmodule1Submodule::toString()
+std::string CPPTemplateSub1Sub::toString()
 {
-    _os = LINUX;
+    _os = APPLE;
     return "[" + getClassName() + "] OS: " + _osToString() + ", ARCH: " + std::to_string(_build_arch);
 }

@@ -2,8 +2,8 @@
 // Created by Peter Hofmann on 07.01.19.
 //
 
-#ifndef CPLUSPLUS_TEMPLATE_SUBMODULE1_SUBMODULE_CPPTEMPLATESUBMODULE1SUBMODULE_H
-#define CPLUSPLUS_TEMPLATE_SUBMODULE1_SUBMODULE_CPPTEMPLATESUBMODULE1SUBMODULE_H
+#ifndef CPP_TEMPLATE_SUB1_SUB_CPPTEMPLATESUB1SUB_H
+#define CPP_TEMPLATE_SUB1_SUB_CPPTEMPLATESUB1SUB_H
 
 /// BUILD_ARCH_64BIT is set by cmake
 #ifdef BUILD_ARCH_64BIT
@@ -29,7 +29,7 @@ namespace SubModule1
      * Most methods are defined in header.
      * This is done, because they are small and this way now implicitly 'inline'.
      */
-    class CPPTemplateSubmodule1Submodule
+    class CPPTemplateSub1Sub
     {
     private:
         /**
@@ -57,7 +57,7 @@ namespace SubModule1
         /**
          * Name of the current class, to be played around with when later inherited
          */
-        std::string _className = "CPPTemplateSubmodule1Submodule";
+        std::string _className = "CPPTemplateSub1Sub";
 
         /**
          * Return OS as string
@@ -81,12 +81,12 @@ namespace SubModule1
         /**
          * Constructor that passes a name for the class
          */
-        CPPTemplateSubmodule1Submodule(std::string className) : _className(className) {};
+        CPPTemplateSub1Sub(std::string className) : _className(className) {};
 
         /**
          * Default Constructor
          */
-        CPPTemplateSubmodule1Submodule() {};
+        CPPTemplateSub1Sub() {};
 
         /**
          * Get Class Name
@@ -116,4 +116,4 @@ namespace SubModule1
     };
 }
 
-#endif //CPLUSPLUS_TEMPLATE_SUBMODULE1_SUBMODULE_CPPTEMPLATESUBMODULE1SUBMODULE_H
+#endif //CPP_TEMPLATE_SUB1_SUB_CPPTEMPLATESUB1SUB_H
