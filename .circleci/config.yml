@@ -24,3 +24,6 @@ jobs:
       - run:
           name: Test Unit Testing
           command: './bin/UnitTestCPPTemplateSub1Sub'
+      - run:
+          name: CTest
+          command: 'CTEST_OUTPUT_ON_FAILURE=1; ctest build'
