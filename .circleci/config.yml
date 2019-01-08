@@ -13,6 +13,9 @@ jobs:
           name: Installing GCC
           command: 'apt-get update && apt-get install -y gcc g++'
       - run:
+          name: Installing VALGRIND
+          command: 'apt-get update && apt-get install -y valgrind'
+      - run:
           name: Install CMAKE
           command: 'apt-get update && sudo apt-get install -y cmake'
       - run:
@@ -20,10 +23,16 @@ jobs:
           command: 'apt-get update && sudo apt-get install -y git'
       - run:
           name: Creating Build Files
-          command: 'cmake -H. -Bbuild'
+          command: 'cmake -H. -BBuild-Debug  -DCMAKE_BUILD_TYPE=Debug -Wdev -DUSE_CPP14=${CPP14} -DUSE_CPP17=${CPP17} -DCATCH_USE_VALGRIND=${VALGRIND} -DCATCH_BUILD_EXAMPLES=${EXAMPLES} -DCATCH_ENABLE_COVERAGE=${COVERAGE} -DCATCH_BUILD_EXTRA_TESTS=${EXTRAS}'
+          environment:
+            CPP14=1
+            VALGRIND=1
+            EXAMPLES=1
+            COVERAGE=1
+            EXTRAS=1
       - run:
           name: Creating Binary Files
-          command: 'cmake --build build'
+          command: 'cmake --build Build-Debug'
       - run:
           name: Unit Testing
           command: 'for file in ./bin/*; do "$file"; done'
