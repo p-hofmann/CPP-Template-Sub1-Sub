@@ -34,8 +34,14 @@ jobs:
           name: Creating Binary Files
           command: 'cmake --build Build-Debug'
       - run:
+          name: Creating Result folder
+          command: 'mkdir -p /tmp/test-results'
+      - run:
           name: Unit Testing
-          command: 'for file in ./bin/*; do "$file"; done'
+          command: 'for file in ./bin/*; do "$file" -r junit >> /tmp/test-results/junit.xml; done'
       - run:
           name: CTest
           command: 'cd Build-Debug; CTEST_OUTPUT_ON_FAILURE=1; ctest .'
+
+      - store_test_results:
+          path: '/tmp/test-results'
