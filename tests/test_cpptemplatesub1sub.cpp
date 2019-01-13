@@ -18,6 +18,7 @@ TEST_CASE("Test default toString", "[TemplateSubmodule1Submodule]")
     CPPTemplateSub1Sub module;
     std::string tmp1 = module.toString();
     REQUIRE(tmp1.size() > 0);
+    REQUIRE(module.getClassName() == "CPPTemplateSub1Sub");
 }
 
 /*!
@@ -45,9 +46,11 @@ TEST_CASE("Test print()", "[TemplateSubmodule1Submodule]")
 /*!
  * Testing constructor and getClassName()
  */
-TEST_CASE("Test getClassName()", "[TemplateSubmodule1Submodule]")
+TEST_CASE("Test getClassName()", "[NamedClass]")
 {
     std::string className = "Test";
-    CPPTemplateSub1Sub module(className);
+    NamedClass module(className);
     REQUIRE(module.getClassName() == className);
+    std::string tmp = module.getClassName();
+    tmp = "";
 }

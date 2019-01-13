@@ -62,6 +62,7 @@ set(INCLUDE_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/../include)
 add_executable(${TEST_PROJECT_NAME}
     test_cpptemplatesub1sub.cpp
     ${PLATFORM_DEPENENT_FILES}
+    ${INCLUDE_LOCATION}/namedclass.h
     ${INCLUDE_LOCATION}/cpptemplatesub1sub.h
     )
 

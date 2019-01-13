@@ -13,6 +13,7 @@
 #endif
 
 #include <string>
+#include "namedclass.h"
 
 /*!
  * Same namespace as SubModule 1, since this module will be tha same library later
@@ -29,7 +30,7 @@ namespace SubModule1
      * Most methods are defined in header.
      * This is done, because they are small and this way now implicitly 'inline'.
      */
-    class CPPTemplateSub1Sub
+    class CPPTemplateSub1Sub : public NamedClass
     {
     private:
         /**
@@ -55,11 +56,6 @@ namespace SubModule1
         OSType _os = UNKNOWN;
 
         /**
-         * Name of the current class, to be played around with when later inherited
-         */
-        std::string _className = "CPPTemplateSub1Sub";
-
-        /**
          * Return OS as string
          */
         std::string _osToString()
@@ -78,33 +74,13 @@ namespace SubModule1
         }
 
     public:
-        /**
-         * Constructor that passes a name for the class
-         */
-        CPPTemplateSub1Sub(std::string className) : _className(className) {};
+        /// inherit toString
+        using NamedClass::toString;
 
-        /**
-         * Default Constructor
-         */
-        CPPTemplateSub1Sub() {};
+        CPPTemplateSub1Sub();
 
-        /**
-         * Get Class Name
-         */
-        std::string getClassName() { return _className; };
-
-        /**
-         * Return Class as string
-         */
+        ///overwrite
         std::string toString();
-
-        /**
-         * Store class as string into a passed variabe
-         */
-        void toString(std::string *string_variable)
-        {
-            *string_variable = toString();
-        }
 
         /**
          * Print class as string to stdout

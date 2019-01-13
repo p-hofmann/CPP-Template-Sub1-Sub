@@ -29,6 +29,7 @@ endif ()
 # Make a static library
 add_library(CPPTemplateSub1Sub
     ${PLATFORM_DEPENEND}
+    include/namedclass.h
     include/cpptemplatesub1sub.h
     )
 
