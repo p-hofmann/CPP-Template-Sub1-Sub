@@ -22,12 +22,12 @@ namespace SubModule1
         /**
          * Constructor that passes a name for the class
          */
-        NamedClass(std::string &className) : _className(className) {}
+        NamedClass(const std::string &className) : _className(className) {}
 
         /**
          * Get Class Name
          */
-        const std::string &getClassName() { return _className; };
+        std::string getClassName() { return _className; };
 
         /**
          * Return class description as string
