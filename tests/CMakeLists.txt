@@ -34,7 +34,7 @@ endif ()
 ###############
 
 # Name the test project
-set(TEST_PROJECT_NAME UnitTestCPPTemplateSub1Sub)
+set(TEST_PROJECT_NAME UnitTest_CppTemplateSub1Sub)
 project(${TEST_PROJECT_NAME} VERSION 0.0.1 LANGUAGES CXX)
 
 # Find out if the current architecture is 32 or 64 bit and

@@ -15,10 +15,10 @@ using namespace SubModule1;
  */
 TEST_CASE("Test default toString", "[TemplateSubmodule1Submodule]")
 {
-    CPPTemplateSub1Sub module;
+    CppTemplateSub1Sub module;
     std::string tmp1 = module.toString();
     REQUIRE(tmp1.size() > 0);
-    REQUIRE(module.getClassName() == "CPPTemplateSub1Sub");
+    REQUIRE(module.getClassName() == "CppTemplateSub1Sub");
 }
 
 /*!
@@ -26,7 +26,7 @@ TEST_CASE("Test default toString", "[TemplateSubmodule1Submodule]")
  */
 TEST_CASE("Test passing argument to toString", "[TemplateSubmodule1Submodule]")
 {
-    CPPTemplateSub1Sub module;
+    CppTemplateSub1Sub module;
     std::string tmp1 = module.toString();
     std::string tmp2;
     module.toString(&tmp2);
@@ -39,7 +39,7 @@ TEST_CASE("Test passing argument to toString", "[TemplateSubmodule1Submodule]")
  */
 TEST_CASE("Test print()", "[TemplateSubmodule1Submodule]")
 {
-    CPPTemplateSub1Sub module;
+    CppTemplateSub1Sub module;
     module.print(); //TODO: Need stdout buffer to test this one
 }
 

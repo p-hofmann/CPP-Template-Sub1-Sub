@@ -31,7 +31,7 @@ namespace SubModule1
      * Most methods are defined in header.
      * This is done, because they are small and this way now implicitly 'inline'.
      */
-    class CPPTemplateSub1Sub : public NamedClass
+    class CppTemplateSub1Sub : public NamedClass
     {
     private:
         /**
@@ -78,7 +78,7 @@ namespace SubModule1
         /// inherit toString
         using NamedClass::toString;
 
-        CPPTemplateSub1Sub();
+        CppTemplateSub1Sub();
 
         ///overwrite
         std::string toString();

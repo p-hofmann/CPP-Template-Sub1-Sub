@@ -7,14 +7,14 @@
 
 using namespace SubModule1;
 
-CPPTemplateSub1Sub::CPPTemplateSub1Sub() : NamedClass("CPPTemplateSub1Sub"), _os(WINDOWS) {};
+CppTemplateSub1Sub::CppTemplateSub1Sub() : NamedClass("CppTemplateSub1Sub"), _os(WINDOWS) {};
 
 /**
  * This method generates a string representing the class
  * The OS specificity here is silly, but imagine instead a method like getCWD()
  * @return - String representing the class
  */
-std::string CPPTemplateSub1Sub::toString()
+std::string CppTemplateSub1Sub::toString()
 {
     return "[" + getClassName() + "] OS: " + _osToString() + ", ARCH: " + std::to_string(_build_arch);
 }

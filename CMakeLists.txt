@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 11)
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/bin)
 
 # Name the project and add a version number
-project(CPPTemplateSub1Sub VERSION 0.0.1 LANGUAGES CXX)
+project(CppTemplateSub1Sub VERSION 0.0.1 LANGUAGES CXX)
 
 # Find out if the current architecture is 32 or 64 bit and
 # This will add the equal of '#define BUILD_ARCH_64BIT' to each file in case of a 64bit architecture
@@ -27,14 +27,14 @@ else ()
 endif ()
 
 # Make a static library
-add_library(CPPTemplateSub1Sub
+add_library(CppTemplateSub1Sub
     ${PLATFORM_DEPENEND}
     include/namedclass.h
     include/cpptemplatesub1sub.h
     )
 
 # This will specify for this project only, /src and /include as the folders to look into for files
-target_include_directories(CPPTemplateSub1Sub
+target_include_directories(CppTemplateSub1Sub
     PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>
