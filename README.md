@@ -9,6 +9,8 @@ The [Catch2](https://github.com/catchorg/Catch2) source is not included in this 
 Continuous integration using [Travis CI](https://travis-ci.com/) is supported. The Code is there tested on Linux, Darwin and Windows OS.
 [Circle CI](https://circleci.com/) is supported, but the Code is tested on Linux only. for now.
 
+## Project Layout
+
 ├── CMakeLists.txt  
 ├── .travis.yml  
 ├── .circleci  
@@ -24,8 +26,7 @@ Continuous integration using [Travis CI](https://travis-ci.com/) is supported. T
 │&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── catch.hpp  
 └── tests  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── CMakeLists.txt  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── main.cpp  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── string_utils.test.cpp  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── test_project.cpp  
 
 * .travis.yml - Configuration file for [Travis CI](https://travis-ci.com/) support.
 * .circleci/config.yml - Configuration file for [Circle CI](https://circleci.com/) support.
@@ -33,5 +34,6 @@ Continuous integration using [Travis CI](https://travis-ci.com/) is supported. T
 * src - Source files of current module
 * external - External projects that are not developed as part of this project.
 * tests - Unittest files of current module
+* [catch2](https://github.com/catchorg/Catch2) - Is downloaded as part of cmake when run on unittests
 
 The 'include' folder does not contain sub-folders, as this repository represents a mini module.
