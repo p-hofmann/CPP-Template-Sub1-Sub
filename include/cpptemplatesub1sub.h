@@ -12,6 +12,7 @@
 #define BUILD_ARCH 32
 #endif
 
+#include <iostream>
 #include <string>
 #include "namedclass.h"
 
