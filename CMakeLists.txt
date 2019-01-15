@@ -50,5 +50,5 @@ target_include_directories(CppTemplateSub1Sub
 add_subdirectory(external)
 
 # build unittests
-enable_testing()
-add_subdirectory(tests)
+#enable_testing()
+#add_subdirectory(tests)
