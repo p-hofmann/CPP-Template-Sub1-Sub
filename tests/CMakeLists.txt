@@ -40,6 +40,9 @@ add_executable(${TEST_PROJECT_NAME}
 
 # get src location of catch
 ExternalProject_Get_Property(catch2_project SOURCE_DIR)
+message(
+    "Catch2:" ${SOURCE_DIR}
+)
 
 # This will specify for this project only, /src and /include as the folders to look into for files
 target_include_directories(${TEST_PROJECT_NAME}
