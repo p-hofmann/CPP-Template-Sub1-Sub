@@ -10,7 +10,7 @@ add_subdirectory(external)
 # build unittests
 if(NOT UNITTESTS_ENABLED)
     enable_testing()
-    set(UNITTESTS_ENABLED)
+    set(UNITTESTS_ENABLED 1)
     add_subdirectory(tests)
 endif()
 
