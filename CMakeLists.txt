@@ -43,6 +43,12 @@ target_include_directories(CppTemplateSub1Sub
     ${CMAKE_CURRENT_SOURCE_DIR}/src
     )
 
+#####
 # Add Unittest
+#####
+# clone catch2 from github
+add_subdirectory(external)
+
+# build unittests
 enable_testing()
 add_subdirectory(tests)
