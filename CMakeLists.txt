@@ -12,7 +12,7 @@ if(NOT UNITTESTS_SKIP)
     enable_testing()
     add_subdirectory(tests)
 endif()
-set(UNITTESTS_SKIP 1 PARENT_SCOPE)
+set(UNITTESTS_SKIP 1)
 
 #####
 # Main Project
