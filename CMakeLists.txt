@@ -22,7 +22,7 @@ add_subdirectory(external)
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/bin)
 
 # Name the project and add a version number
-project(CppTemplateSub1Sub VERSION 0.0.2 LANGUAGES CXX)
+project(CppTemplateSub1Sub VERSION 0.0.3 LANGUAGES CXX)
 
 # Find out if the current architecture is 32 or 64 bit and
 # This will add the equal of '#define BUILD_ARCH_64BIT' to each file in case of a 64bit architecture
