@@ -1,6 +1,23 @@
 cmake_minimum_required(VERSION 3.5)
 set(CMAKE_CXX_STANDARD 11)
 
+#####
+# Add Unittest
+#####
+# clone catch2 from github
+add_subdirectory(external)
+
+# build unittests
+if(NOT UNITTESTS_ENABLED)
+    enable_testing()
+    set(UNITTESTS_ENABLED)
+    add_subdirectory(tests)
+endif()
+
+#####
+# Main Project
+#####
+
 # Have all executables in the bin folder, so continuous integratian can easily call them
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/bin)
 
@@ -42,13 +59,3 @@ target_include_directories(CppTemplateSub1Sub
     PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/src
     )
-
-#####
-# Add Unittest
-#####
-# clone catch2 from github
-add_subdirectory(external)
-
-# build unittests
-#enable_testing()
-#add_subdirectory(tests)
