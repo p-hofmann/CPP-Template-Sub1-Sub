@@ -24,6 +24,18 @@ namespace SubModule1
 {
 
     /**
+     * An enum
+     * List of Operating Systems
+     */
+    enum OSType
+    {
+        WINDOWS,
+        LINUX,
+        APPLE,
+        UNKNOWN
+    };
+
+    /**
      * Class exemplifying how code for different OS can be dealt with
      * Having cpp files for each OS removes the often ugly '#ifdef' that make a code unreadable
      * Issue: What if the OS specificity is required in the header?
@@ -35,18 +47,6 @@ namespace SubModule1
     {
     private:
         /**
-         * An enum
-         * List of Operating Systems
-         */
-        enum OSType
-        {
-            WINDOWS,
-            LINUX,
-            APPLE,
-            UNKNOWN
-        };
-
-        /**
          * Integer storing 32 or 64
          */
         static const unsigned short _build_arch = BUILD_ARCH;
@@ -56,10 +56,21 @@ namespace SubModule1
          */
         OSType _os = UNKNOWN;
 
+    public:
+        /// inherit toString
+        using NamedClass::toString;
+        /// inherit constructors
+
+        CppTemplateSub1Sub();
+        CppTemplateSub1Sub(const std::string &className);
+
+        ///overwrite
+        std::string toString();
+
         /**
          * Return OS as string
          */
-        std::string _osToString()
+        std::string osAsString()
         {
             switch (_os)
             {
@@ -74,14 +85,7 @@ namespace SubModule1
             };
         }
 
-    public:
-        /// inherit toString
-        using NamedClass::toString;
-
-        CppTemplateSub1Sub();
-
-        ///overwrite
-        std::string toString();
+        OSType getOS() { return _os; };
 
         /**
          * Print class as string to stdout

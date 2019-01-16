@@ -8,6 +8,11 @@
 using namespace SubModule1;
 
 CppTemplateSub1Sub::CppTemplateSub1Sub() : NamedClass("CppTemplateSub1Sub"), _os(WINDOWS) {};
+/**
+ * Constructor setting class Name
+ * @param className - Name of class
+ */
+CppTemplateSub1Sub::CppTemplateSub1Sub(const std::string &className) : NamedClass(className), _os(WINDOWS) {}
 
 /**
  * This method generates a string representing the class
@@ -16,5 +21,5 @@ CppTemplateSub1Sub::CppTemplateSub1Sub() : NamedClass("CppTemplateSub1Sub"), _os
  */
 std::string CppTemplateSub1Sub::toString()
 {
-    return "[" + getClassName() + "] OS: " + _osToString() + ", ARCH: " + std::to_string(_build_arch);
+    return "[" + getClassName() + "] OS: " + osAsString() + ", ARCH: " + std::to_string(_build_arch);
 }
