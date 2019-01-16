@@ -2,16 +2,6 @@ cmake_minimum_required(VERSION 3.5)
 set(CMAKE_CXX_STANDARD 11)
 
 #####
-# Add Unittest
-#####
-# clone catch2 from github
-add_subdirectory(external)
-
-# build unittests
-enable_testing()
-add_subdirectory(tests)
-
-#####
 # Main Project
 #####
 
@@ -56,3 +46,13 @@ target_include_directories(CppTemplateSub1Sub
     PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/src
     )
+
+#####
+# Add Unittest
+#####
+# clone catch2 from github
+add_subdirectory(external)
+
+# build unittests
+enable_testing()
+add_subdirectory(tests)
