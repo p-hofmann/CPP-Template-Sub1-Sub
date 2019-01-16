@@ -8,11 +8,8 @@ set(CMAKE_CXX_STANDARD 11)
 add_subdirectory(external)
 
 # build unittests
-if(NOT UNITTESTS_SKIP)
-    enable_testing()
-    add_subdirectory(tests)
-endif()
-set(UNITTESTS_SKIP 1)
+enable_testing()
+add_subdirectory(tests)
 
 #####
 # Main Project
