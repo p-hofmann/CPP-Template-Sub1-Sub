@@ -5,9 +5,6 @@ set(CMAKE_CXX_STANDARD 11)
 # Main Project
 #####
 
-# Have all executables in the bin folder, so continuous integratian can easily call them
-set(EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/bin)
-
 # Name the project and add a version number
 project(CppTemplateSub1Sub VERSION 0.0.2 LANGUAGES CXX)
 
@@ -36,6 +33,8 @@ add_library(CppTemplateSub1Sub
     include/namedclass.h
     include/cpptemplatesub1sub.h
     )
+
+install(TARGETS CppTemplateSub1Sub DESTINATION lib)
 
 # This will specify for this project only, /src and /include as the folders to look into for files
 target_include_directories(CppTemplateSub1Sub
